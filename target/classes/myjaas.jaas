@@ -1,5 +1,0 @@
-Client {
-com.sun.security.auth.module.Krb5LoginModule
-requireduseTicketCache=false
-useKeytab=true
-serviceName="zookeeper";};
