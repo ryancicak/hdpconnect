@@ -37,9 +37,17 @@ public class PhoenixJdbcClientv1Impl implements PhoenixJdbcClientv1 {
      */
     public void createConnection(String url, Credentials credentials) throws SQLException, IOException {
 
+        logger.debug("Creating authentication credentials...");
+
         authenticate(credentials);
 
+        logger.debug("Authentication complete");
+
+        logger.debug("Creating connection...");
+
         connection = DriverManager.getConnection(url);
+
+        logger.debug("Connection created");
 
     }
 
@@ -50,7 +58,13 @@ public class PhoenixJdbcClientv1Impl implements PhoenixJdbcClientv1 {
     public void disconnect() throws SQLException {
 
         if(connection != null) {
+
+            logger.debug("Closing connection...");
+
             connection.close();
+
+            logger.debug("Closed connection");
+
         }
     }
 
@@ -75,6 +89,10 @@ public class PhoenixJdbcClientv1Impl implements PhoenixJdbcClientv1 {
 
             // kerberos
         } else if((keytab = credentials.getKeytab()) != null && (principal = credentials.getPrincipal()) != null) {
+
+            String krb5ConfigFilePath =
+                    (credentials.getKrb5Location() == null ? "/etc/krb5.conf" : credentials.getKrb5Location());
+            System.setProperty("java.security.krb5.conf", krb5ConfigFilePath);
 
             UserGroupInformation.loginUserFromKeytab(principal, keytab);
 

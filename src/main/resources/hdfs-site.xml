@@ -1,10 +1,5 @@
   <configuration>
-
-      <property>
-          <name>dfs.namenode.datanode.registration.ip-hostname-check</name>
-          <value>false</value>
-      </property>
-
+    
     <property>
       <name>dfs.block.access.token.enable</name>
       <value>true</value>
@@ -213,6 +208,11 @@
     <property>
       <name>dfs.namenode.https-address</name>
       <value>rcicakm0.field.hortonworks.com:50470</value>
+    </property>
+    
+    <property>
+      <name>dfs.namenode.inode.attributes.provider.class</name>
+      <value>org.apache.ranger.authorization.hadoop.RangerHdfsAuthorizer</value>
     </property>
     
     <property>

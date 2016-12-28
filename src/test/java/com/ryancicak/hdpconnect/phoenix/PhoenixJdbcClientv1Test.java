@@ -13,6 +13,7 @@ public class PhoenixJdbcClientv1Test {
     private static Logger logger = Logger.getLogger(PhoenixJdbcClientv1Test.class);
 
 
+    @Ignore
     @Test
     public void createConnection() throws IOException, SQLException {
 
@@ -33,6 +34,7 @@ public class PhoenixJdbcClientv1Test {
             logger.info(res.getInt(1) + "," + res.getString(2));
         }
         stmt.close();
+        phoenix.disconnect();
 
     }
 

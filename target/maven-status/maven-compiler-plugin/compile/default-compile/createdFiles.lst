@@ -1,1 +1,4 @@
-com/ryancicak/HiveJdbcClientv1.class
+com/ryancicak/hdpconnect/Main.class
+com/ryancicak/hdpconnect/phoenix/PhoenixJdbcClientv1.class
+com/ryancicak/hdpconnect/authentication/Credentials.class
+com/ryancicak/hdpconnect/phoenix/PhoenixJdbcClientv1Impl.class

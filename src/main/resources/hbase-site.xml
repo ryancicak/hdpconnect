@@ -32,17 +32,17 @@
     
     <property>
       <name>hbase.coprocessor.master.classes</name>
-      <value>org.apache.hadoop.hbase.security.access.AccessController</value>
+      <value>org.apache.ranger.authorization.hbase.RangerAuthorizationCoprocessor</value>
     </property>
     
     <property>
       <name>hbase.coprocessor.region.classes</name>
-      <value>org.apache.hadoop.hbase.security.access.AccessController,org.apache.hadoop.hbase.security.token.TokenProvider,org.apache.hadoop.hbase.security.access.SecureBulkLoadEndpoint</value>
+      <value>org.apache.hadoop.hbase.security.token.TokenProvider,org.apache.hadoop.hbase.security.access.SecureBulkLoadEndpoint,org.apache.ranger.authorization.hbase.RangerAuthorizationCoprocessor</value>
     </property>
     
     <property>
       <name>hbase.coprocessor.regionserver.classes</name>
-      <value>org.apache.hadoop.hbase.security.access.AccessController</value>
+      <value>org.apache.ranger.authorization.hbase.RangerAuthorizationCoprocessor</value>
     </property>
     
     <property>
@@ -222,7 +222,7 @@
     
     <property>
       <name>hfile.block.cache.size</name>
-      <value>0.40</value>
+      <value>0.4</value>
     </property>
     
     <property>
